@@ -20,6 +20,7 @@ public class CadenasGUI extends javax.swing.JDialog {
     public CadenasGUI(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        mic=null;
     }
 
     /**
@@ -48,8 +49,13 @@ public class CadenasGUI extends javax.swing.JDialog {
         });
 
         jButton2.setText("Regresar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Invertir", "Convertir MAYUS", "Convertir MINUS", "Longitud" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Invertir", "Convertir MAYUS", "Convertir MINUS", "Longitud", "¿Esta en Mayusculas o Minusculas?" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -105,8 +111,83 @@ public class CadenasGUI extends javax.swing.JDialog {
         if(sel.compareTo("Invertir")==0){
             ejecProcCad();
         }
+        else if (sel.compareTo("Longitud")==0){
+            ejecProcCad2();
+        }
+        else if (sel.compareTo("Convertir MAYUS")==0){
+            ejecProcCad3();
+        }
+        else if (sel.compareTo("Convertir MINUS")==0){
+            ejecProcCad4();
+        }
+        else if (sel.compareTo("¿Esta en Mayusculas o Minusculas?")==0){
+            ejecProcCad5();
+        }
+        else if (sel.compareTo("¿Esta en minusculas?")==0){
+            ejecProcCad6();
+        }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    public void ejecProcCad(){
+        String cx = jTextField2.getText();
+        mic= new Cadena(cx);
+        String ci= mic.invertir();
+        jTextField1.setText(ci);
+    }
+    
+    public void ejecProcCad2(){
+        String cx = jTextField2.getText();
+        mic= new Cadena(cx);
+        String ci= String.valueOf(mic.longitud());
+        jTextField1.setText(ci);
+    }
+    
+    public void ejecProcCad3(){
+        String cx = jTextField2.getText();
+        mic= new Cadena(cx);
+        String ci= mic.convertirMayus();
+        jTextField1.setText(ci);
+    }
+    
+    public void ejecProcCad4(){
+        String cx = jTextField2.getText();
+        mic= new Cadena(cx);
+        String ci= mic.convertirMinus();
+        jTextField1.setText(ci);
+    }
+    
+    public void mostrarMensaje(String m){
+        javax.swing.JOptionPane.showMessageDialog(this, m);
+    }
+    
+    public void ejecProcCad5(){
+        String cx=jTextField2.getText();
+        mic= new Cadena(cx);
+        if(mic.esMayuscula(cx)==true){
+            mostrarMensaje("Está escrito en mayusculas");
+        }
+        else {
+            mostrarMensaje("Está escrito en minusculas");
+        }
+    }
+    
+    public void ejecProcCad6(){
+        String cx=jTextField2.getText();
+        mic= new Cadena(cx);
+        if(mic.esMinuscula(cx)==true){
+            mostrarMensaje("Está escrito en minusculas");
+        }
+        else {
+            mostrarMensaje("No esta escrito en minusculas");
+        }
+    }
+    
+    
     /**
      * @param args the command line arguments
      */

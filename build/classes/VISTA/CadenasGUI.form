@@ -82,15 +82,19 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Regresar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
+          <StringArray count="5">
             <StringItem index="0" value="Invertir"/>
             <StringItem index="1" value="Convertir MAYUS"/>
             <StringItem index="2" value="Convertir MINUS"/>
             <StringItem index="3" value="Longitud"/>
+            <StringItem index="4" value="&#xbf;Esta en Mayusculas o Minusculas?"/>
           </StringArray>
         </Property>
       </Properties>

@@ -41,10 +41,24 @@ public class Cadena {
            r=true;
         return r;
     }
+    
+    public String convertirMayus(){
+        return cad.toUpperCase();
+    }
+    
+    public String convertirMinus(){
+        return cad.toLowerCase();
+    }
         
-    public static boolean esMinuscula(String s) {
+    public boolean esMinuscula(String s) {
     return s.equals(s.toLowerCase());
     }
+    
+    public boolean esMayuscula(String s) {
+    return s.equals(s.toUpperCase());
+    }
+    
+    
     
     public static void main (String[] args){
         Cadena x= new Cadena("anitalavalatina");
