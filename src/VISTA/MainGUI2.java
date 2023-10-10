@@ -83,6 +83,11 @@ public class MainGUI2 extends javax.swing.JFrame {
 
         btnEjem.setBackground(new java.awt.Color(122, 0, 0));
         btnEjem.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEjem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEjemMouseClicked(evt);
+            }
+        });
         btnEjem.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ejemText.setFont(new java.awt.Font("Roboto Medium", 1, 24)); // NOI18N
@@ -91,6 +96,9 @@ public class MainGUI2 extends javax.swing.JFrame {
         ejemText.setText("Ejemplos Java");
         ejemText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ejemText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ejemTextMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ejemTextMouseEntered(evt);
             }
@@ -200,6 +208,9 @@ public class MainGUI2 extends javax.swing.JFrame {
         semiText.setText("Seminario");
         semiText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         semiText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                semiTextMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 semiTextMouseEntered(evt);
             }
@@ -229,6 +240,9 @@ public class MainGUI2 extends javax.swing.JFrame {
         aboutText.setText("Acerca de");
         aboutText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         aboutText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aboutTextMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 aboutTextMouseEntered(evt);
             }
@@ -457,6 +471,46 @@ public class MainGUI2 extends javax.swing.JFrame {
         // Regresar color original
         btnAbout.setBackground(new Color(122,0,0));
     }//GEN-LAST:event_aboutTextMouseExited
+
+    private void aboutTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutTextMouseClicked
+        // Abrir la otra ventana
+        About ab = new About();
+        ab.setSize(540,410);
+        ab.setLocation(0,0);
+        
+        content.removeAll();
+        content.add(ab, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_aboutTextMouseClicked
+
+    private void btnEjemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEjemMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEjemMouseClicked
+
+    private void ejemTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ejemTextMouseClicked
+        // TODO add your handling code here:
+        ExamplesJV jv = new ExamplesJV();
+        jv.setSize(540,410);
+        jv.setLocation(0,0);
+        
+        content.removeAll();
+        content.add(jv, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_ejemTextMouseClicked
+
+    private void semiTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semiTextMouseClicked
+        // La ventana de seminario
+        SeminarioGUI sm = new SeminarioGUI();
+        sm.setSize(540,410);
+        sm.setLocation(0,0);
+        
+        content.removeAll();
+        content.add(sm, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_semiTextMouseClicked
 
     /**
      * @param args the command line arguments
