@@ -5,6 +5,9 @@
  */
 package VISTA;
 
+import java.awt.Color;
+import static jdk.nashorn.internal.objects.NativeString.substring;
+
 /**
  *
  * @author estudiante307
@@ -20,7 +23,7 @@ public class SeminarioGUI extends javax.swing.JPanel {
     public SeminarioGUI() {
         initComponents();
         cual='A';
-        dir="/VISTA/Imagenes/";
+        dir="/VISTA/Images/";
         
         nombre=cual+"1.jpg";
         cargarImagen(dir, nombre);
@@ -28,6 +31,32 @@ public class SeminarioGUI extends javax.swing.JPanel {
     
     public void cargarImagen(String dir, String nombre){
         imSm.setIcon(new javax.swing.ImageIcon(getClass().getResource(dir + nombre)));
+    }
+    
+    public void definirNextNombre(){
+        String snumero=nombre.substring(1,2);
+        int numero = Integer.parseInt(snumero);
+        
+        numero++;
+        
+        if(numero>9)
+            numero=1;
+        nombre = cual + "" +numero+".jpg";
+        
+        cargarImagen(dir, nombre);
+    }
+    
+    public void definirAntNombre(){
+        String snumero=nombre.substring(1, 2);
+        int numero= Integer.parseInt(snumero);
+        
+        numero --;
+        
+        if(numero<=0)
+            numero=9;
+        nombre = cual + "" +numero+".jpg";
+        
+        cargarImagen(dir, nombre);
     }
 
     /**
@@ -47,6 +76,10 @@ public class SeminarioGUI extends javax.swing.JPanel {
         right = new javax.swing.JLabel();
         bgIm = new javax.swing.JPanel();
         imSm = new javax.swing.JLabel();
+        btnA = new javax.swing.JPanel();
+        aText = new javax.swing.JLabel();
+        btnB = new javax.swing.JPanel();
+        bText = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,6 +91,12 @@ public class SeminarioGUI extends javax.swing.JPanel {
 
         left.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         left.setIcon(new javax.swing.ImageIcon(getClass().getResource("/VISTA/Images/flecha-correcta.png"))); // NOI18N
+        left.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        left.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                leftMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnLeftLayout = new javax.swing.GroupLayout(btnLeft);
         btnLeft.setLayout(btnLeftLayout);
@@ -73,6 +112,12 @@ public class SeminarioGUI extends javax.swing.JPanel {
         bg.add(btnLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 359, -1, -1));
 
         right.setIcon(new javax.swing.ImageIcon(getClass().getResource("/VISTA/Images/flc left.png"))); // NOI18N
+        right.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        right.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rightMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnRightLayout = new javax.swing.GroupLayout(btnRight);
         btnRight.setLayout(btnRightLayout);
@@ -87,6 +132,10 @@ public class SeminarioGUI extends javax.swing.JPanel {
 
         bg.add(btnRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 359, 40, 40));
 
+        bgIm.setBackground(new java.awt.Color(0, 0, 0));
+
+        imSm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout bgImLayout = new javax.swing.GroupLayout(bgIm);
         bgIm.setLayout(bgImLayout);
         bgImLayout.setHorizontalGroup(
@@ -100,6 +149,74 @@ public class SeminarioGUI extends javax.swing.JPanel {
 
         bg.add(bgIm, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 440, 290));
 
+        btnA.setBackground(new java.awt.Color(122, 0, 0));
+
+        aText.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        aText.setForeground(new java.awt.Color(255, 255, 255));
+        aText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        aText.setText("A");
+        aText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        aText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aTextMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aTextMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                aTextMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnALayout = new javax.swing.GroupLayout(btnA);
+        btnA.setLayout(btnALayout);
+        btnALayout.setHorizontalGroup(
+            btnALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnALayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(aText, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        btnALayout.setVerticalGroup(
+            btnALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(aText, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        bg.add(btnA, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 40, 30));
+
+        btnB.setBackground(new java.awt.Color(122, 0, 0));
+
+        bText.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        bText.setForeground(new java.awt.Color(255, 255, 255));
+        bText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bText.setText("B");
+        bText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bTextMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bTextMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bTextMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnBLayout = new javax.swing.GroupLayout(btnB);
+        btnB.setLayout(btnBLayout);
+        btnBLayout.setHorizontalGroup(
+            btnBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnBLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bText, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        btnBLayout.setVerticalGroup(
+            btnBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bText, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        bg.add(btnB, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 40, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,10 +229,58 @@ public class SeminarioGUI extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void leftMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftMouseClicked
+        // TODO add your handling code here:
+        definirNextNombre();
+    }//GEN-LAST:event_leftMouseClicked
+
+    private void rightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightMouseClicked
+        // TODO add your handling code here:
+        definirAntNombre();
+    }//GEN-LAST:event_rightMouseClicked
+
+    private void bTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bTextMouseEntered
+        // TODO add your handling code here:
+        btnB.setBackground(new Color(160,0,0));
+    }//GEN-LAST:event_bTextMouseEntered
+
+    private void bTextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bTextMouseExited
+        // TODO add your handling code here:
+        btnB.setBackground(new Color(122,0,0));
+    }//GEN-LAST:event_bTextMouseExited
+
+    private void aTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aTextMouseEntered
+        // TODO add your handling code here:
+        btnA.setBackground(new Color(160,0,0));
+    }//GEN-LAST:event_aTextMouseEntered
+
+    private void aTextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aTextMouseExited
+        // TODO add your handling code here:
+        btnA.setBackground(new Color(122,0,0));
+    }//GEN-LAST:event_aTextMouseExited
+
+    private void bTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bTextMouseClicked
+        // Cambiamos al problema B
+        cual='B';
+        nombre=cual + "1.jpg";
+        cargarImagen(dir,nombre);
+    }//GEN-LAST:event_bTextMouseClicked
+
+    private void aTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aTextMouseClicked
+        // cambiamos al problma A
+        cual='A';
+        nombre=cual + "1.jpg";
+        cargarImagen(dir,nombre);
+    }//GEN-LAST:event_aTextMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel aText;
+    private javax.swing.JLabel bText;
     private javax.swing.JPanel bg;
     private javax.swing.JPanel bgIm;
+    private javax.swing.JPanel btnA;
+    private javax.swing.JPanel btnB;
     private javax.swing.JPanel btnLeft;
     private javax.swing.JPanel btnRight;
     private javax.swing.JLabel imSm;

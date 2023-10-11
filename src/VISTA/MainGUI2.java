@@ -53,6 +53,10 @@ public class MainGUI2 extends javax.swing.JFrame {
         semiText = new javax.swing.JLabel();
         btnAbout = new javax.swing.JPanel();
         aboutText = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
         header = new javax.swing.JPanel();
         close = new javax.swing.JPanel();
@@ -74,7 +78,7 @@ public class MainGUI2 extends javax.swing.JFrame {
         menuText.setFont(new java.awt.Font("Roboto Medium", 1, 36)); // NOI18N
         menuText.setForeground(new java.awt.Color(255, 255, 255));
         menuText.setText("Menú");
-        menuNav.add(menuText, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 37, -1, 44));
+        menuNav.add(menuText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, 44));
 
         separatorText.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         separatorText.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,6 +154,9 @@ public class MainGUI2 extends javax.swing.JFrame {
         miosText.setText("Programas Propios");
         miosText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         miosText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miosTextMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 miosTextMouseEntered(evt);
             }
@@ -179,6 +186,9 @@ public class MainGUI2 extends javax.swing.JFrame {
         gamesText.setText("Juegos");
         gamesText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gamesText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gamesTextMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 gamesTextMouseEntered(evt);
             }
@@ -263,6 +273,41 @@ public class MainGUI2 extends javax.swing.JFrame {
         );
 
         menuNav.add(btnAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 260, 50));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/VISTA/Images/yoEnano.jpg"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(40, 16));
+        jLabel1.setMinimumSize(new java.awt.Dimension(40, 16));
+        jLabel1.setPreferredSize(new java.awt.Dimension(40, 16));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+        );
+
+        menuNav.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 40, 55));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/VISTA/Images/firmaEnana.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        menuNav.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 107, 55));
 
         bg.add(menuNav, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 500));
 
@@ -350,7 +395,7 @@ public class MainGUI2 extends javax.swing.JFrame {
 
         titleB.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         titleB.setText("PROYECTO: ALEJANDRO GUAPACHA");
-        bannerT.add(titleB, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 11, -1, 76));
+        bannerT.add(titleB, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 76));
 
         bg.add(bannerT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 540, 90));
 
@@ -512,6 +557,30 @@ public class MainGUI2 extends javax.swing.JFrame {
         content.repaint();
     }//GEN-LAST:event_semiTextMouseClicked
 
+    private void gamesTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gamesTextMouseClicked
+        // Abrir la pestaña juegos
+        JuegosGUI gm = new JuegosGUI();
+        gm.setSize(540,410);
+        gm.setLocation(0,0);
+        
+        content.removeAll();
+        content.add(gm, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_gamesTextMouseClicked
+
+    private void miosTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miosTextMouseClicked
+        // Entra a la pestaña programas propios
+        PropiosGUI pro = new PropiosGUI();
+        pro.setSize(540,410);
+        pro.setLocation(0,0);
+        
+        content.removeAll();
+        content.add(pro, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_miosTextMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -564,6 +633,10 @@ public class MainGUI2 extends javax.swing.JFrame {
     private javax.swing.JLabel ejemText;
     private javax.swing.JLabel gamesText;
     private javax.swing.JPanel header;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel menuNav;
     private javax.swing.JLabel menuText;
     private javax.swing.JLabel miosText;

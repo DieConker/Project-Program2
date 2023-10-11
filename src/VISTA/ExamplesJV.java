@@ -35,10 +35,12 @@ public class ExamplesJV extends javax.swing.JPanel {
         ordtresText = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         title.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         title.setText("Ejemplos Java");
+        bg.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 34));
 
         btnOrdTres.setBackground(new java.awt.Color(122, 0, 0));
 
@@ -46,7 +48,7 @@ public class ExamplesJV extends javax.swing.JPanel {
         ordtresText.setForeground(new java.awt.Color(255, 255, 255));
         ordtresText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ordtresText.setText("Ordenar 3 Numeros");
-        ordtresText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ordtresText.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         ordtresText.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ordtresTextMouseEntered(evt);
@@ -67,24 +69,7 @@ public class ExamplesJV extends javax.swing.JPanel {
             .addComponent(ordtresText, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
-        bg.setLayout(bgLayout);
-        bgLayout.setHorizontalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addComponent(btnOrdTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOrdTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(304, Short.MAX_VALUE))
-        );
+        bg.add(btnOrdTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
