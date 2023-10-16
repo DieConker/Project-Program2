@@ -6,6 +6,7 @@
 package VISTA;
 
 import java.awt.Color;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -33,6 +34,10 @@ public class ProgClass extends javax.swing.JPanel {
         titulo = new javax.swing.JLabel();
         btnNuArray = new javax.swing.JPanel();
         nuArrayText = new javax.swing.JLabel();
+        btnCadena = new javax.swing.JPanel();
+        bgIcon2 = new javax.swing.JPanel();
+        icon2 = new javax.swing.JLabel();
+        cadenaText = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,7 +77,47 @@ public class ProgClass extends javax.swing.JPanel {
             .addComponent(nuArrayText, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        bg.add(btnNuArray, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 140, 30));
+        bg.add(btnNuArray, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 140, 30));
+
+        btnCadena.setBackground(new java.awt.Color(255, 255, 255));
+        btnCadena.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadena.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCadenaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCadenaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCadenaMouseExited(evt);
+            }
+        });
+        btnCadena.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bgIcon2.setBackground(new java.awt.Color(197, 54, 54));
+
+        icon2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/VISTA/Images/cadena.png"))); // NOI18N
+
+        javax.swing.GroupLayout bgIcon2Layout = new javax.swing.GroupLayout(bgIcon2);
+        bgIcon2.setLayout(bgIcon2Layout);
+        bgIcon2Layout.setHorizontalGroup(
+            bgIcon2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(icon2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+        );
+        bgIcon2Layout.setVerticalGroup(
+            bgIcon2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(icon2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btnCadena.add(bgIcon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, -1));
+
+        cadenaText.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        cadenaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cadenaText.setText("Manejo de Cadenas");
+        btnCadena.add(cadenaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 150, 60));
+
+        bg.add(btnCadena, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 150, 190));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -100,10 +145,30 @@ public class ProgClass extends javax.swing.JPanel {
         btnNuArray.setBackground(new Color(122,0,0));
     }//GEN-LAST:event_nuArrayTextMouseExited
 
+    private void btnCadenaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadenaMouseEntered
+        // TODO add your handling code here:
+        btnCadena.setBackground(new Color(197,180,180));
+    }//GEN-LAST:event_btnCadenaMouseEntered
+
+    private void btnCadenaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadenaMouseExited
+        // TODO add your handling code here:
+        btnCadena.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_btnCadenaMouseExited
+
+    private void btnCadenaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadenaMouseClicked
+        // TODO add your handling code here:
+        CadenasPanel cp= new CadenasPanel();
+        ((MainGUI2) SwingUtilities.getWindowAncestor(this)).showPanel(cp);
+    }//GEN-LAST:event_btnCadenaMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JPanel bgIcon2;
+    private javax.swing.JPanel btnCadena;
     private javax.swing.JPanel btnNuArray;
+    private javax.swing.JLabel cadenaText;
+    private javax.swing.JLabel icon2;
     private javax.swing.JLabel nuArrayText;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables

@@ -7,6 +7,7 @@ package VISTA;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import javax.swing.JPanel;
 
 /**
  *
@@ -19,13 +20,21 @@ public class MainGUI2 extends javax.swing.JFrame {
         initComponents();
         
         UI cs = new UI();
-        cs.setSize(540,410);
-        cs.setLocation(0,0);
+        showPanel(cs);
+        
+        
+        
+    }
+    
+    public void showPanel(JPanel p){
+        p.setSize(540,410);
+        p.setLocation(0,0);
         
         content.removeAll();
-        content.add(cs, BorderLayout.CENTER);
+        content.add(p, BorderLayout.CENTER);
         content.revalidate();
         content.repaint();
+        
     }
 
     /**
@@ -326,7 +335,7 @@ public class MainGUI2 extends javax.swing.JFrame {
 
         bg.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 540, 410));
 
-        header.setBackground(new java.awt.Color(204, 204, 204));
+        header.setBackground(new java.awt.Color(255, 235, 205));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 headerMouseDragged(evt);
@@ -338,12 +347,13 @@ public class MainGUI2 extends javax.swing.JFrame {
             }
         });
 
-        close.setBackground(new java.awt.Color(204, 204, 204));
+        close.setBackground(new java.awt.Color(255, 235, 205));
         close.setPreferredSize(new java.awt.Dimension(32, 32));
 
         closeText.setFont(new java.awt.Font("Roboto Thin", 1, 26)); // NOI18N
         closeText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         closeText.setText("x");
+        closeText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         closeText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         closeText.setPreferredSize(new java.awt.Dimension(32, 32));
         closeText.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -390,7 +400,7 @@ public class MainGUI2 extends javax.swing.JFrame {
 
         bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
-        bannerT.setBackground(new java.awt.Color(204, 204, 204));
+        bannerT.setBackground(new java.awt.Color(255, 235, 205));
         bannerT.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleB.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
@@ -440,7 +450,7 @@ public class MainGUI2 extends javax.swing.JFrame {
 
     private void closeTextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeTextMouseExited
         // Tdevolver al color original
-        Color grisHeader = new Color(204, 204, 204);
+        Color grisHeader = new Color(255, 235, 205);
         close.setBackground(grisHeader);
         closeText.setForeground(Color.BLACK);
     }//GEN-LAST:event_closeTextMouseExited
@@ -487,14 +497,8 @@ public class MainGUI2 extends javax.swing.JFrame {
 
     private void classTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_classTextMouseClicked
         // TODO add your handling code here:
-        ProgClass cs = new ProgClass();
-        cs.setSize(540,410);
-        cs.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(cs, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        ProgClass cc = new ProgClass();
+        showPanel(cc);
     }//GEN-LAST:event_classTextMouseClicked
 
     private void semiTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semiTextMouseEntered
@@ -520,13 +524,7 @@ public class MainGUI2 extends javax.swing.JFrame {
     private void aboutTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutTextMouseClicked
         // Abrir la otra ventana
         About ab = new About();
-        ab.setSize(540,410);
-        ab.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(ab, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        showPanel(ab);
     }//GEN-LAST:event_aboutTextMouseClicked
 
     private void btnEjemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEjemMouseClicked
@@ -536,49 +534,25 @@ public class MainGUI2 extends javax.swing.JFrame {
     private void ejemTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ejemTextMouseClicked
         // TODO add your handling code here:
         ExamplesJV jv = new ExamplesJV();
-        jv.setSize(540,410);
-        jv.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(jv, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        showPanel(jv);
     }//GEN-LAST:event_ejemTextMouseClicked
 
     private void semiTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semiTextMouseClicked
         // La ventana de seminario
         SeminarioGUI sm = new SeminarioGUI();
-        sm.setSize(540,410);
-        sm.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(sm, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        showPanel(sm);
     }//GEN-LAST:event_semiTextMouseClicked
 
     private void gamesTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gamesTextMouseClicked
         // Abrir la pestaña juegos
         JuegosGUI gm = new JuegosGUI();
-        gm.setSize(540,410);
-        gm.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(gm, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        showPanel(gm);
     }//GEN-LAST:event_gamesTextMouseClicked
 
     private void miosTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miosTextMouseClicked
         // Entra a la pestaña programas propios
         PropiosGUI pro = new PropiosGUI();
-        pro.setSize(540,410);
-        pro.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(pro, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        showPanel(pro);
     }//GEN-LAST:event_miosTextMouseClicked
 
     /**

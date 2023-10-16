@@ -43,13 +43,22 @@ public class ExamplesJV extends javax.swing.JPanel {
         bg.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 34));
 
         btnOrdTres.setBackground(new java.awt.Color(122, 0, 0));
+        btnOrdTres.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOrdTres.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOrdTresMouseClicked(evt);
+            }
+        });
 
         ordtresText.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         ordtresText.setForeground(new java.awt.Color(255, 255, 255));
         ordtresText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ordtresText.setText("Ordenar 3 Numeros");
-        ordtresText.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ordtresText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ordtresText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ordtresTextMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ordtresTextMouseEntered(evt);
             }
@@ -69,7 +78,7 @@ public class ExamplesJV extends javax.swing.JPanel {
             .addComponent(ordtresText, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
         );
 
-        bg.add(btnOrdTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        bg.add(btnOrdTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -79,7 +88,7 @@ public class ExamplesJV extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -92,6 +101,18 @@ public class ExamplesJV extends javax.swing.JPanel {
         // TODO add your handling code here:
         btnOrdTres.setBackground(new Color(122,0,0));
     }//GEN-LAST:event_ordtresTextMouseExited
+
+    private void btnOrdTresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrdTresMouseClicked
+        // TODO add your handling code here:
+        Ordenar3GUI ord3= new Ordenar3GUI(null,true);
+        ord3.setVisible(true);
+    }//GEN-LAST:event_btnOrdTresMouseClicked
+
+    private void ordtresTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordtresTextMouseClicked
+        // TODO add your handling code here:
+        Ordenar3GUI ord3= new Ordenar3GUI(null,true);
+        ord3.setVisible(true);
+    }//GEN-LAST:event_ordtresTextMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
