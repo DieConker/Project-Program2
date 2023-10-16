@@ -5,6 +5,9 @@
  */
 package VISTA;
 
+import java.awt.Color;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author estudiante305
@@ -27,45 +30,109 @@ public class JuegosGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        bg = new javax.swing.JPanel();
+        title = new javax.swing.JLabel();
+        btnGame1 = new javax.swing.JPanel();
+        bgIcon = new javax.swing.JPanel();
+        icon = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(540, 410));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setBackground(new java.awt.Color(211, 211, 211));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        title.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title.setText("Juegos");
+        bg.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 40));
+
+        btnGame1.setBackground(new java.awt.Color(211, 211, 211));
+        btnGame1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGame1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGame1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGame1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGame1MouseExited(evt);
+            }
+        });
+
+        bgIcon.setBackground(new java.awt.Color(213, 162, 42));
+
+        icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/VISTA/Images/serpiente.png"))); // NOI18N
+
+        javax.swing.GroupLayout bgIconLayout = new javax.swing.GroupLayout(bgIcon);
+        bgIcon.setLayout(bgIconLayout);
+        bgIconLayout.setHorizontalGroup(
+            bgIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(icon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        bgIconLayout.setVerticalGroup(
+            bgIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(icon, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+        );
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 2, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Juegos");
+        jLabel1.setText("Culebrita (Snake)");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+        javax.swing.GroupLayout btnGame1Layout = new javax.swing.GroupLayout(btnGame1);
+        btnGame1.setLayout(btnGame1Layout);
+        btnGame1Layout.setHorizontalGroup(
+            btnGame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bgIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 375, Short.MAX_VALUE))
+        btnGame1Layout.setVerticalGroup(
+            btnGame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnGame1Layout.createSequentialGroup()
+                .addComponent(bgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
         );
+
+        bg.add(btnGame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 190, 230));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnGame1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGame1MouseEntered
+        // TODO add your handling code here:
+        btnGame1.setBackground(new Color(255, 250, 205));
+    }//GEN-LAST:event_btnGame1MouseEntered
+
+    private void btnGame1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGame1MouseExited
+        // TODO add your handling code here:
+        btnGame1.setBackground(new Color(211,211,211));
+    }//GEN-LAST:event_btnGame1MouseExited
+
+    private void btnGame1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGame1MouseClicked
+        // TODO add your handling code here:
+        Game1 gm1= new Game1();
+        ((MainGUI2) SwingUtilities.getWindowAncestor(this)).showPanel(gm1);
+    }//GEN-LAST:event_btnGame1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bg;
+    private javax.swing.JPanel bgIcon;
+    private javax.swing.JPanel btnGame1;
+    private javax.swing.JLabel icon;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

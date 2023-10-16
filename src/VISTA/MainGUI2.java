@@ -5,8 +5,10 @@
  */
 package VISTA;
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import javax.swing.JPanel;
 
 /**
@@ -14,6 +16,8 @@ import javax.swing.JPanel;
  * @author diego
  */
 public class MainGUI2 extends javax.swing.JFrame {
+    
+    
 
     int xMouse, yMouse;
     public MainGUI2() {
@@ -77,6 +81,11 @@ public class MainGUI2 extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setUndecorated(true);
         setResizable(false);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -554,6 +563,11 @@ public class MainGUI2 extends javax.swing.JFrame {
         PropiosGUI pro = new PropiosGUI();
         showPanel(pro);
     }//GEN-LAST:event_miosTextMouseClicked
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formKeyPressed
 
     /**
      * @param args the command line arguments

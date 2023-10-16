@@ -89,6 +89,9 @@ public class CadenasPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         areaTexto1 = new MODELO.AreaTexto();
         areaTexto2 = new MODELO.AreaTexto();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(250, 235, 215));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,20 +105,33 @@ public class CadenasPanel extends javax.swing.JPanel {
                 cajonA1ActionPerformed(evt);
             }
         });
-        bg.add(cajonA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 230, 50));
+        bg.add(cajonA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 230, 50));
 
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manejo de Cadenas");
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 30));
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 540, 30));
 
         areaTexto1.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         areaTexto1.setLabelText("Ingrese su Cadena");
-        bg.add(areaTexto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 64, 380, 50));
+        bg.add(areaTexto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 380, 50));
 
+        areaTexto2.setEditable(false);
         areaTexto2.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         areaTexto2.setLabelText("Cadena manejada:");
-        bg.add(areaTexto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 380, 50));
+        bg.add(areaTexto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 380, 50));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel2.setText("Los carácteres o cadenas (Strings) tienen una amplia variedad de manejos con ellas");
+        bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 460, -1));
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel3.setText("mismas, este programa se encarga  de  mostrar  algunas  de  las  funciones  que   se ");
+        bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 460, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel4.setText("pueden hacer, mostrandonos el resultado en la parte de abajo.");
+        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 460, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -161,5 +177,8 @@ public class CadenasPanel extends javax.swing.JPanel {
     private javax.swing.JPanel bg;
     private MODELO.CajonA cajonA1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
