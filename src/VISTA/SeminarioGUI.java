@@ -82,6 +82,8 @@ public class SeminarioGUI extends javax.swing.JPanel {
         bText = new javax.swing.JLabel();
         btnC = new javax.swing.JPanel();
         cText = new javax.swing.JLabel();
+        btnD = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -251,6 +253,38 @@ public class SeminarioGUI extends javax.swing.JPanel {
 
         bg.add(btnC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 40, 30));
 
+        btnD.setBackground(new java.awt.Color(122, 0, 0));
+        btnD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDMouseExited(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("D");
+
+        javax.swing.GroupLayout btnDLayout = new javax.swing.GroupLayout(btnD);
+        btnD.setLayout(btnDLayout);
+        btnDLayout.setHorizontalGroup(
+            btnDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        btnDLayout.setVerticalGroup(
+            btnDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        bg.add(btnD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 40, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -324,6 +358,23 @@ public class SeminarioGUI extends javax.swing.JPanel {
         cargarImagen(dir,nombre);
     }//GEN-LAST:event_btnCMouseClicked
 
+    private void btnDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDMouseEntered
+        // TODO add your handling code here:
+        btnD.setBackground(new Color(160,0,0));
+    }//GEN-LAST:event_btnDMouseEntered
+
+    private void btnDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDMouseExited
+        // TODO add your handling code here:
+        btnD.setBackground(new Color(122,0,0));
+    }//GEN-LAST:event_btnDMouseExited
+
+    private void btnDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDMouseClicked
+        // TODO add your handling code here:
+        cual='D';
+        nombre=cual + "1.jpg";
+        cargarImagen(dir,nombre);
+    }//GEN-LAST:event_btnDMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aText;
@@ -333,11 +384,13 @@ public class SeminarioGUI extends javax.swing.JPanel {
     private javax.swing.JPanel btnA;
     private javax.swing.JPanel btnB;
     private javax.swing.JPanel btnC;
+    private javax.swing.JPanel btnD;
     private javax.swing.JPanel btnLeft;
     private javax.swing.JPanel btnRight;
     private javax.swing.JLabel cText;
     private javax.swing.JLabel imSm;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel left;
     private javax.swing.JLabel right;
     // End of variables declaration//GEN-END:variables
