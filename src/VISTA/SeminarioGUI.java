@@ -80,6 +80,8 @@ public class SeminarioGUI extends javax.swing.JPanel {
         aText = new javax.swing.JLabel();
         btnB = new javax.swing.JPanel();
         bText = new javax.swing.JLabel();
+        btnC = new javax.swing.JPanel();
+        cText = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -151,7 +153,7 @@ public class SeminarioGUI extends javax.swing.JPanel {
 
         btnA.setBackground(new java.awt.Color(122, 0, 0));
 
-        aText.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        aText.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         aText.setForeground(new java.awt.Color(255, 255, 255));
         aText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         aText.setText("A");
@@ -185,7 +187,7 @@ public class SeminarioGUI extends javax.swing.JPanel {
 
         btnB.setBackground(new java.awt.Color(122, 0, 0));
 
-        bText.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        bText.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         bText.setForeground(new java.awt.Color(255, 255, 255));
         bText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bText.setText("B");
@@ -216,6 +218,38 @@ public class SeminarioGUI extends javax.swing.JPanel {
         );
 
         bg.add(btnB, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 40, 30));
+
+        btnC.setBackground(new java.awt.Color(122, 0, 0));
+        btnC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCMouseExited(evt);
+            }
+        });
+
+        cText.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        cText.setForeground(new java.awt.Color(255, 255, 255));
+        cText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cText.setText("C");
+
+        javax.swing.GroupLayout btnCLayout = new javax.swing.GroupLayout(btnC);
+        btnC.setLayout(btnCLayout);
+        btnCLayout.setHorizontalGroup(
+            btnCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cText, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        btnCLayout.setVerticalGroup(
+            btnCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cText, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        bg.add(btnC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 40, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -273,6 +307,23 @@ public class SeminarioGUI extends javax.swing.JPanel {
         cargarImagen(dir,nombre);
     }//GEN-LAST:event_aTextMouseClicked
 
+    private void btnCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCMouseEntered
+        // TODO add your handling code here:
+        btnC.setBackground(new Color(160,0,0));
+    }//GEN-LAST:event_btnCMouseEntered
+
+    private void btnCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCMouseExited
+        // TODO add your handling code here:
+        btnC.setBackground(new Color(122,0,0));
+    }//GEN-LAST:event_btnCMouseExited
+
+    private void btnCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCMouseClicked
+        // TODO add your handling code here:
+        cual='C';
+        nombre=cual + "1.jpg";
+        cargarImagen(dir,nombre);
+    }//GEN-LAST:event_btnCMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aText;
@@ -281,8 +332,10 @@ public class SeminarioGUI extends javax.swing.JPanel {
     private javax.swing.JPanel bgIm;
     private javax.swing.JPanel btnA;
     private javax.swing.JPanel btnB;
+    private javax.swing.JPanel btnC;
     private javax.swing.JPanel btnLeft;
     private javax.swing.JPanel btnRight;
+    private javax.swing.JLabel cText;
     private javax.swing.JLabel imSm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel left;
